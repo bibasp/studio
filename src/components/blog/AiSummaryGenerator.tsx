@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -69,7 +70,7 @@ export function AiSummaryGenerator() {
             onChange={(e) => setPostContent(e.target.value)}
             placeholder="Enter your full blog post content here..."
             rows={10}
-            className="text-base"
+            className="text-base text-foreground"
             disabled={isLoading}
           />
         </div>
@@ -98,7 +99,7 @@ export function AiSummaryGenerator() {
               value={summary}
               readOnly
               rows={5}
-              className="bg-muted text-base"
+              className="bg-muted text-base text-muted-foreground"
             />
           </div>
         )}
@@ -111,3 +112,4 @@ export function AiSummaryGenerator() {
     </Card>
   );
 }
+

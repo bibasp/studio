@@ -70,7 +70,7 @@ export function AiArticleGenerator() {
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
             placeholder="e.g., The Impact of Quantum Computing on Cybersecurity"
-            className="text-base"
+            className="text-base text-foreground"
             disabled={isLoading}
           />
         </div>
@@ -82,7 +82,7 @@ export function AiArticleGenerator() {
             value={wordCount || ''}
             onChange={(e) => setWordCount(e.target.value ? parseInt(e.target.value, 10) : undefined)}
             placeholder="e.g., 800"
-            className="text-base w-1/3"
+            className="text-base w-1/3 text-foreground"
             disabled={isLoading}
             min="100"
             step="50"
@@ -118,7 +118,7 @@ export function AiArticleGenerator() {
                 id="generatedTitle"
                 value={generatedArticle.title}
                 readOnly
-                className="bg-muted text-base font-semibold"
+                className="bg-muted text-base font-semibold text-muted-foreground"
               />
             </div>
 
@@ -129,7 +129,7 @@ export function AiArticleGenerator() {
                 value={generatedArticle.content}
                 readOnly
                 rows={15}
-                className="bg-muted text-base leading-relaxed"
+                className="bg-muted text-base leading-relaxed text-muted-foreground"
               />
             </div>
 
@@ -140,7 +140,7 @@ export function AiArticleGenerator() {
                 value={generatedArticle.summary}
                 readOnly
                 rows={3}
-                className="bg-muted text-base"
+                className="bg-muted text-base text-muted-foreground"
               />
             </div>
             
@@ -159,7 +159,7 @@ export function AiArticleGenerator() {
                 id="imageHint"
                 value={generatedArticle.imageHint}
                 readOnly
-                className="bg-muted text-base"
+                className="bg-muted text-base text-muted-foreground"
               />
             </div>
           </div>
