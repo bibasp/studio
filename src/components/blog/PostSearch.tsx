@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { FormEvent } from 'react';
@@ -16,9 +17,11 @@ import { PostTimeline } from './PostTimeline';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '../ui/separator';
 
+const ALL_AUTHORS_VALUE = "__ALL_AUTHORS__";
+
 export function PostSearch() {
   const [query, setQuery] = useState('');
-  const [author, setAuthor] = useState('');
+  const [author, setAuthor] = useState(ALL_AUTHORS_VALUE);
   const [startDate, setStartDate] = useState<Date | undefined>();
   const [endDate, setEndDate] = useState<Date | undefined>();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -44,7 +47,7 @@ export function PostSearch() {
     setIsLoading(true);
     setHasSearched(true);
     const results = await fetchSearchPosts(query, {
-      author: author || undefined,
+      author: author === ALL_AUTHORS_VALUE ? undefined : author,
       startDate: startDate ? format(startDate, 'yyyy-MM-dd') : undefined,
       endDate: endDate ? format(endDate, 'yyyy-MM-dd') : undefined,
       tags: selectedTags.length > 0 ? selectedTags : undefined,
@@ -55,7 +58,7 @@ export function PostSearch() {
 
   const handleReset = () => {
     setQuery('');
-    setAuthor('');
+    setAuthor(ALL_AUTHORS_VALUE);
     setStartDate(undefined);
     setEndDate(undefined);
     setSelectedTags([]);
@@ -102,7 +105,7 @@ export function PostSearch() {
                     <SelectValue placeholder="All Authors" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Authors</SelectItem>
+                    <SelectItem value={ALL_AUTHORS_VALUE}>All Authors</SelectItem>
                     {availableAuthors.map(auth => (
                       <SelectItem key={auth} value={auth}>{auth}</SelectItem>
                     ))}
