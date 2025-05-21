@@ -19,7 +19,7 @@ export interface ThemeSettings {
 
 export const DEFAULT_THEME: ThemeSettings = {
   backgroundColor: "208 100% 97%", // Light Gray (AliceBlue)
-  foregroundColor: "180 25% 25%",   // Dark Slate Gray
+  foregroundColor: "220 20% 15%",   // Dark Cool Gray - Improved Contrast
   primaryColor: "210 14% 57%",     // Slate Blue
   accentColor: "240 67% 94%",      // Soft Lavender
 };

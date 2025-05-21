@@ -9,13 +9,13 @@ body {
 @layer base {
   :root {
     --background-hsl: 208 100% 97%; /* Light Gray - AliceBlue */
-    --foreground-hsl: 180 25% 25%; /* Dark Slate Gray */
+    --foreground-hsl: 220 20% 15%; /* Dark Cool Gray - Improved Contrast */
 
     --card-hsl: 208 100% 97%; /* Matches background HSL */
-    --card-foreground-hsl: 180 25% 25%; /* Matches foreground HSL */
+    --card-foreground-hsl: 220 20% 15%; /* Matches new foreground HSL */
 
     --popover-hsl: 208 100% 97%; /* Matches background HSL */
-    --popover-foreground-hsl: 180 25% 25%; /* Matches foreground HSL */
+    --popover-foreground-hsl: 220 20% 15%; /* Matches new foreground HSL */
 
     --primary-hsl: 210 14% 57%; /* Slate Blue */
     --primary-foreground-hsl: 0 0% 100%; /* White for contrast on Slate Blue */
@@ -24,7 +24,7 @@ body {
     --secondary-foreground-hsl: 210 14% 40%; /* Darker Slate Blue for text on secondary */
 
     --muted-hsl: 210 20% 90%; /* Lighter gray for muted elements */
-    --muted-foreground-hsl: 210 14% 45%; /* Slightly darker gray for muted text */
+    --muted-foreground-hsl: 220 15% 40%; /* Medium-Dark Cool Gray - Improved Contrast */
 
     --accent-hsl: 240 67% 94%; /* Soft Lavender */
     --accent-foreground-hsl: 210 14% 30%; /* Darker Slate Blue for text on accent */
@@ -69,7 +69,7 @@ body {
 
     /* Sidebar specific HSL values */
     --sidebar-background-hsl: 208 100% 97%;
-    --sidebar-foreground-hsl: 180 25% 25%;
+    --sidebar-foreground-hsl: 220 20% 15%; /* Matched to new foreground */
     --sidebar-primary-hsl: 210 14% 57%;
     --sidebar-primary-foreground-hsl: 0 0% 100%;
     --sidebar-accent-hsl: 240 67% 94%;
