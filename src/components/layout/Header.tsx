@@ -1,7 +1,8 @@
+
 "use client";
 
 import Link from 'next/link';
-import { BookOpenText, Search, Palette, Sparkles } from 'lucide-react';
+import { BookOpenText, Search, Palette, Sparkles, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeCustomizer } from '@/components/theme/ThemeCustomizer';
 import { useState, useEffect } from 'react';
@@ -24,6 +25,7 @@ export function Header() {
           </Link>
           {/* Placeholder for nav to avoid layout shift */}
           <nav className="flex items-center gap-1">
+            <div className="h-9 w-20 rounded-md bg-muted/50 animate-pulse"></div>
             <div className="h-9 w-20 rounded-md bg-muted/50 animate-pulse"></div>
             <div className="h-9 w-20 rounded-md bg-muted/50 animate-pulse"></div>
             <div className="h-9 w-20 rounded-md bg-muted/50 animate-pulse"></div>
@@ -56,6 +58,12 @@ export function Header() {
               <Link href="/generate-summary">
                 <Sparkles className="h-4 w-4 sm:mr-2" />
                 <span className="hidden sm:inline">AI Summary</span>
+              </Link>
+            </Button>
+            <Button variant="ghost" asChild className="btn-subtle-hover">
+              <Link href="/generate-article">
+                <FileText className="h-4 w-4 sm:mr-2" />
+                <span className="hidden sm:inline">AI Article</span>
               </Link>
             </Button>
             <Button
