@@ -19,7 +19,18 @@ function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((val
     }
   };
 
-  const [storedValue, setStoredValue] = useState<T>(readValue);
+  const [storedValue, setStoredValue] = useState<T>(() => {
+    if (typeof window === 'undefined') {
+      return initialValue;
+    }
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.warn(`Error reading localStorage key “${key}”:`, error);
+      return initialValue;
+    }
+  });
 
   // Return a wrapped version of useState's setter function that ...
   // ... persists the new value to localStorage.

@@ -8,7 +8,9 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  output: 'export',
   images: {
+    unoptimized: true, // required for static export
     remotePatterns: [
       {
         protocol: 'https',
@@ -18,6 +20,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // If deploying to a subpath, set assetPrefix (uncomment and edit below)
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '/your-repo-name/' : '',
 };
 
 export default nextConfig;
